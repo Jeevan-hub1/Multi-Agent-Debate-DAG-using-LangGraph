@@ -1,6 +1,4 @@
-Sure! Here's your **updated full `README.md`** tailored to the new architecture using Hugging Face's `transformers` pipeline (specifically GPT-2), with all mentions of OpenAI removed and relevant sections rewritten accordingly:
 
----
 
 # 🧠 Multi-Agent Debate DAG using LangGraph
 
@@ -320,6 +318,4 @@ To contribute:
 3. Make your changes + tests
 4. Submit a pull request!
 
----
 
-Let me know if you'd like this as a downloadable `README.md` file or need help deploying this as a web app.
