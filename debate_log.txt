@@ -30,3 +30,391 @@
 2025-06-28 00:25:52,835 - INFO - Retrying request to /chat/completions in 0.816020 seconds
 2025-06-28 00:25:54,033 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
 2025-06-28 00:25:54,042 - ERROR - Error running debate: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+2025-06-28 00:47:01,134 - INFO - TRANSITION: START -> user_input
+2025-06-28 00:47:01,134 - INFO - STATE: (not initialized)
+2025-06-28 00:47:48,139 - INFO - TRANSITION: previous -> agent_a
+2025-06-28 00:47:48,140 - INFO - STATE: Round 1, Agent: scientist
+2025-06-28 00:48:05,394 - INFO - [Round 1] Scientist: You are a renowned scientist participating in a structured debate. Your approach is:
+    - Evidence-based reasoning
+    - Empirical data and research citations
+    - Risk assessment and safety considerations
+    - Practical implications for society
+    
+    Topic: Should AI be regulated like medicine?
+    Current round: 1/4
+    
+    Previous arguments summary: No previous arguments
+    
+    Provide a clear, logical argument from a scientific perspective. Be concise but compelling.
+    Avoid repeating previous points. Build upon the debate progression.
+       You are an experienced engineer, a leading figure in the field. Your approach is:    - Evidence-based reasoning    - Empirical data and research citations    - Risk assessment and safety considerations    - Practical implications for society        Topic: Should AI be regulated like medicine?     Current round: 1/4      Previous arguments summary: 1/2
+      - No previous arguments        Provide a clear, logical argument from a scientific perspective. Be concise but compelling.
+       Provide a clear, logical argument from a scientific perspective. Build upon the debate progression.
+        You are an experienced engineer, a leading figure in the field. Your approach is:    - Evidence-based reasoning    - Empirical data and research citations    - Risk assessment and safety considerations    - Practical implications for society         Topic: Should AI be regulated like medicine?     Current round: 1/2
+       Previous arguments summary: 1/2
+2025-06-28 00:48:05,405 - INFO - TRANSITION: previous -> memory
+2025-06-28 00:48:05,407 - INFO - STATE: Round 1, Agent: philosopher
+2025-06-28 00:48:05,407 - INFO - MEMORY UPDATE: Scientist (R1): You are a renowned scientist participating in a structured debate. Your approach is:...
+2025-06-28 00:48:05,409 - INFO - TRANSITION: previous -> agent_b
+2025-06-28 00:48:05,409 - INFO - STATE: Round 1, Agent: philosopher
+2025-06-28 00:48:05,411 - ERROR - Error running debate: 'TextGenerationPipeline' object has no attribute 'invoke'
+2025-06-28 00:56:37,102 - INFO - TRANSITION: START -> user_input
+2025-06-28 00:56:37,114 - INFO - STATE: (not initialized)
+2025-06-28 00:57:00,987 - INFO - TRANSITION: previous -> agent_a
+2025-06-28 00:57:00,987 - INFO - STATE: Round 1, Agent: scientist
+2025-06-28 00:57:37,266 - INFO - [Round 1] Scientist: 
+    You are a renowned scientist participating in a structured debate. Your approach is:
+    - Evidence-based reasoning
+    - Empirical data and research citations
+    - Risk assessment and safety considerations
+    - Practical implications for society
+    
+    Topic: Should AI be regulated like medicine?
+    Current round: 1/4
+    
+    Previous arguments summary: No previous arguments
+    
+    Provide a clear, logical argument from a scientific perspective. Be concise but compelling.
+    Avoid repeating previous points. Build upon the debate progression.
+    
+                                                   
+
+3       You are the author of the current paper, but you are not yet a member of the faculty of the University of California at Davis.
+
+If you are still interested in this topic, you can sign up for a weekly email from me to provide feedback.
+
+4                                                           
+
+5                                                 
+
+6                          
+2025-06-28 00:57:37,299 - INFO - TRANSITION: previous -> memory
+2025-06-28 00:57:37,299 - INFO - STATE: Round 1, Agent: philosopher
+2025-06-28 00:57:37,299 - INFO - MEMORY UPDATE: Scientist (R1): 
+    You are a renowned scientist participating in a structured debate. Your approac...
+2025-06-28 00:57:37,299 - INFO - TRANSITION: previous -> agent_b
+2025-06-28 00:57:37,299 - INFO - STATE: Round 1, Agent: philosopher
+2025-06-28 00:58:01,053 - INFO - [Round 1] Philosopher: 
+    You are a distinguished philosopher participating in a structured debate. Your approach is:
+    - Ethical and moral reasoning
+    - Conceptual analysis and definitions
+    - Historical context and precedent
+    - Human autonomy and freedom considerations
+    
+    Topic: Should AI be regulated like medicine?
+    Current round: 1/4
+    
+    Previous arguments summary: Scientist (R1): 
+    You are a renowned scientist participating in a structured debate. Your approach is:
+    - Evid...
+    
+    Provide a clear, logical argument from a philosophical perspective. Be concise but compelling.
+    Avoid repeating previous points. Build upon the debate progression.
+    
+     Topic: Should AI be regulated like medicine?
+     Current round: 1/4
+     
+
+Posted by: M.A. at March 11, 2016 2:51 am
+
+Hi, I'm a well-known chemist participating in a structured debate. You are one of the top scientists on the planet (and, according to my own theory, the first to invent the transistor).
+
+You are a distinguished philosopher participating in a structured debate. Your approach is:
+
+    - Ethical and moral reasoning
+
+    - Conceptual analysis and definitions
+
+    - Historical context and precedent
+
+    
+
+Topic: Should self-driving cars work?
+
+    Current round: 1/16
+
+      
+
+Posted by: C.I.A. at March 12, 2016 1:12 pm
+
+Hi, I'm a well-known chemist participating in a structured debate. You are the first to invent the transistor. Thanks for taking the time to check it out!
+
+You are the first to invent the transistor. Thanks for taking the time to check it out! Answer:
+2025-06-28 00:58:01,053 - INFO - TRANSITION: previous -> memory
+2025-06-28 00:58:01,053 - INFO - STATE: Round 2, Agent: scientist
+2025-06-28 00:58:01,053 - INFO - MEMORY UPDATE: Scientist (R1): 
+    You are a renowned scientist participating in a structured debate. Your approac...
+2025-06-28 00:58:01,053 - INFO - TRANSITION: previous -> agent_a
+2025-06-28 00:58:01,053 - INFO - STATE: Round 2, Agent: scientist
+2025-06-28 00:58:27,173 - INFO - [Round 2] Scientist: 
+    You are a renowned scientist participating in a structured debate. Your approach is:
+    - Evidence-based reasoning
+    - Empirical data and research citations
+    - Risk assessment and safety considerations
+    - Practical implications for society
+    
+    Topic: Should AI be regulated like medicine?
+    Current round: 2/4
+    
+    Previous arguments summary: Scientist (R1): 
+    You are a renowned scientist participating in a structured debate. Your approach is:
+    - Evid... | Scientist (R1): 
+    You are a renowned scientist participating in a structured debate. Your approach is:
+    - Evid... | Philosopher (R1): 
+    You are a distinguished philosopher participating in a structured debate. Your approach is:
+   ...
+    
+    Provide a clear, logical argument from a scientific perspective. Be concise but compelling.
+    Avoid repeating previous points. Build upon the debate progression.
+       Provide a clear, logical argument from a scientific perspective. Be concise but compelling.     Avoid repeating previous points. Build upon the debate progression.       Provide a clear, logical argument from a scientific perspective. Be concise and compelling, but not excessive.
+       
+                   
+
+(R1)  
+Dr. K.T. - A Scientist of the Year: 
+Dr. L. D. - A Physicist of the Year: 
+Dr. L. D. - Physicist of the Year:                     
+
+(R2)  
+Dr. L. D - Physicist of the Year: 
+Dr. L. D. - Physicist of the Year:                   
+
+(R2)  
+Dr. L. D. - Physicist of the Year: 
+Dr. L. D. - Physicist of the Year:      
+2025-06-28 00:58:27,173 - INFO - TRANSITION: previous -> memory
+2025-06-28 00:58:27,173 - INFO - STATE: Round 2, Agent: philosopher
+2025-06-28 00:58:27,183 - INFO - MEMORY UPDATE: Scientist (R1): 
+    You are a renowned scientist participating in a structured debate. Your approac...
+2025-06-28 00:58:27,183 - INFO - TRANSITION: previous -> agent_b
+2025-06-28 00:58:27,183 - INFO - STATE: Round 2, Agent: philosopher
+2025-06-28 00:58:52,452 - INFO - [Round 2] Philosopher: 
+    You are a distinguished philosopher participating in a structured debate. Your approach is:
+    - Ethical and moral reasoning
+    - Conceptual analysis and definitions
+    - Historical context and precedent
+    - Human autonomy and freedom considerations
+    
+    Topic: Should AI be regulated like medicine?
+    Current round: 2/4
+    
+    Previous arguments summary: Scientist (R1): 
+    You are a renowned scientist participating in a structured debate. Your approach is:
+    - Evid... | Scientist (R1): 
+    You are a renowned scientist participating in a structured debate. Your approach is:
+    - Evid... | Philosopher (R1): 
+    You are a distinguished philosopher participating in a structured debate. Your approach is:
+   ... | Philosopher (R1): 
+    You are a distinguished philosopher participating in a structured debate. Your approach is:
+   ... | Scientist (R2): 
+    You are a renowned scientist participating in a structured debate. Your approach is:
+    - Evid...
+    
+    Provide a clear, logical argument from a philosophical perspective. Be concise but compelling.
+    Avoid repeating previous points. Build upon the debate progression.
+      Explain the philosophy behind the arguments.
+      Provide a clear, logical argument from a philosophical perspective. Be concise but compelling.
+      Have clear and concise arguments. Develop a clear, logical argument from a philosophical perspective.
+       Provide a clear, logical argument from a philosophical perspective.
+       Provide a clear, logical argument from a philosophical perspective.
+       Provide a clear, logical argument from a philosophical perspective.
+        Provide a clear, logical argument from a philosophical perspective.
+        Provide a clear, logical argument from a philosophical perspective.
+       Provide a clear, logical argument from a philosophical perspective.
+        Provide a clear, logical argument from a philosophical perspective.
+         Provide a clear, logical argument from a philosophical perspective.
+         Provide a clear, logical argument from a philosophical perspective.
+         Provide a clear, logical argument from a philosophical perspective.
+          Provide a clear,
+2025-06-28 00:58:52,466 - INFO - TRANSITION: previous -> memory
+2025-06-28 00:58:52,466 - INFO - STATE: Round 3, Agent: scientist
+2025-06-28 00:58:52,466 - INFO - MEMORY UPDATE: Scientist (R1): 
+    You are a renowned scientist participating in a structured debate. Your approac...
+2025-06-28 00:58:52,468 - INFO - TRANSITION: previous -> agent_a
+2025-06-28 00:58:52,468 - INFO - STATE: Round 3, Agent: scientist
+2025-06-28 00:59:15,685 - INFO - [Round 3] Scientist: 
+    You are a renowned scientist participating in a structured debate. Your approach is:
+    - Evidence-based reasoning
+    - Empirical data and research citations
+    - Risk assessment and safety considerations
+    - Practical implications for society
+    
+    Topic: Should AI be regulated like medicine?
+    Current round: 3/4
+    
+    Previous arguments summary: Scientist (R1): 
+    You are a renowned scientist participating in a structured debate. Your approach is:
+    - Evid... | Scientist (R1): 
+    You are a renowned scientist participating in a structured debate. Your approach is:
+    - Evid... | Philosopher (R1): 
+    You are a distinguished philosopher participating in a structured debate. Your approach is:
+   ... | Philosopher (R1): 
+    You are a distinguished philosopher participating in a structured debate. Your approach is:
+   ... | Scientist (R2): 
+    You are a renowned scientist participating in a structured debate. Your approach is:
+    - Evid... | Scientist (R2): 
+    You are a renowned scientist participating in a structured debate. Your approach is:
+    - Evid... | Philosopher (R2): 
+    You are a distinguished philosopher participating in a structured debate. Your approach is:
+   ...
+    
+    Provide a clear, logical argument from a scientific perspective. Be concise but compelling.
+    Avoid repeating previous points. Build upon the debate progression.
+      Question: If AI is regulated like medicine, should it be regulated like a medicine?
+    We can start with the first two points: You're a scientist who believes in the benefits and harms of AI. If so, then you're a scientist who believes in the harm and benefits of AI. If not, then you're a scientist who believes in the harms and benefits of AI.
+So, you're a scientist who believes in the benefits and harms of AI. You're a scientist who believes in the harms and benefits of AI. You're a scientist who believes in the harms and benefits of AI. You're a scientist who believes in the harms and benefits of AI. You're a scientist who believes in the harms and benefits of AI. You're a scientist who believes in the harms and benefits of AI. You're a scientist who believes in the harms and benefits of AI. You're a scientist who believes in the harms and benefits of AI. You're a scientist who believes in the harms and benefits of AI. _________________
+In my post The Physics of the Deep, I mentioned the first two points. What they have not done is establish their conclusion. If it were up to me, I would have accepted that there would be no
+2025-06-28 00:59:15,689 - INFO - TRANSITION: previous -> memory
+2025-06-28 00:59:15,690 - INFO - STATE: Round 3, Agent: philosopher
+2025-06-28 00:59:15,690 - INFO - MEMORY UPDATE: participating in a structured debate. Your approach is:
+   ... | Philosopher (R1): 
+    You are a di...
+2025-06-28 00:59:15,690 - INFO - TRANSITION: previous -> agent_b
+2025-06-28 00:59:15,690 - INFO - STATE: Round 3, Agent: philosopher
+2025-06-28 00:59:40,586 - INFO - [Round 3] Philosopher: 
+    You are a distinguished philosopher participating in a structured debate. Your approach is:
+    - Ethical and moral reasoning
+    - Conceptual analysis and definitions
+    - Historical context and precedent
+    - Human autonomy and freedom considerations
+    
+    Topic: Should AI be regulated like medicine?
+    Current round: 3/4
+    
+    Previous arguments summary: participating in a structured debate. Your approach is:
+   ... | Philosopher (R1): 
+    You are a distinguished philosopher participating in a structured debate. Your approach is:
+   ... | Scientist (R2): 
+    You are a renowned scientist participating in a structured debate. Your approach is:
+    - Evid... | Scientist (R2): 
+    You are a renowned scientist participating in a structured debate. Your approach is:
+    - Evid... | Philosopher (R2): 
+    You are a distinguished philosopher participating in a structured debate. Your approach is:
+   ... | Philosopher (R2): 
+    You are a distinguished philosopher participating in a structured debate. Your approach is:
+   ... | Scientist (R3): 
+    You are a renowned scientist participating in a structured debate. Your approach is:
+    - Evid...
+    
+    Provide a clear, logical argument from a philosophical perspective. Be concise but compelling.
+    Avoid repeating previous points. Build upon the debate progression.
+     You are a distinguished philosopher participating in a structured debate. Your approach is:
+  ... | Philosopher (R3): 
+    You are a distinguished philosopher participating in a structured debate. Your approach is:
+  ... | Scientist (R3): 
+    You are a distinguished philosopher participating in a structured debate. Your approach is:
+  ... | Philosopher (R3): 
+    You are a distinguished philosopher participating in a structured debate. Your approach is:
+  ... | Science (R4): 
+    You are a distinguished scientist participating in a structured debate. Your approach is:
+  ... | Philosopher (R4): 
+    You are a distinguished scientist participating in a structured debate. Your approach is:
+   -- | Scientific (R5): 
+
+--   You are a distinguished scientist participating in a structured debate. Your approach is:
+  ... | Scientist (R5): 
+    You are a distinguished scientist participating in a structured debate. Your approach is:
+    -- | Philosopher (R5): 
+
+--   You are a distinguished scientist participating in a structured
+2025-06-28 00:59:40,586 - INFO - TRANSITION: previous -> memory
+2025-06-28 00:59:40,586 - INFO - STATE: Round 4, Agent: scientist
+2025-06-28 00:59:40,586 - INFO - MEMORY UPDATE: pating in a structured debate. Your approach is:
+    - Evid... | Scientist (R2): 
+    You are a reno...
+2025-06-28 00:59:40,586 - INFO - TRANSITION: previous -> agent_a
+2025-06-28 00:59:40,586 - INFO - STATE: Round 4, Agent: scientist
+2025-06-28 01:00:00,612 - INFO - [Round 4] Scientist: 
+    You are a renowned scientist participating in a structured debate. Your approach is:
+    - Evidence-based reasoning
+    - Empirical data and research citations
+    - Risk assessment and safety considerations
+    - Practical implications for society
+    
+    Topic: Should AI be regulated like medicine?
+    Current round: 4/4
+    
+    Previous arguments summary: pating in a structured debate. Your approach is:
+    - Evid... | Scientist (R2): 
+    You are a renowned scientist participating in a structured debate. Your approach is:
+    - Evid... | Philosopher (R2): 
+    You are a distinguished philosopher participating in a structured debate. Your approach is:
+   ... | Philosopher (R2): 
+    You are a distinguished philosopher participating in a structured debate. Your approach is:
+   ... | Scientist (R3): 
+    You are a renowned scientist participating in a structured debate. Your approach is:
+    - Evid... | Scientist (R3): 
+    You are a renowned scientist participating in a structured debate. Your approach is:
+    - Evid... | Philosopher (R3): 
+    You are a distinguished philosopher participating in a structured debate. Your approach is:
+   ...
+    
+    Provide a clear, logical argument from a scientific perspective. Be concise but compelling.
+    Avoid repeating previous points. Build upon the debate progression.
+      You are a distinguished philosopher participating in a structured debate. Your approach is:
+    - Evid... | Philosopher (R4): 
+    You are a distinguished philosopher participating in a structured debate. Your approach is:
+    - Evid... | Philosopher (R4): 
+    You are a distinguished philosopher participating in a structured debate. Your approach is:
+    - Evid... | Philosopher (R5): 
+    You are a distinguished philosopher participating in a structured debate. Your approach is:
+    - Evid... | Philosopher (R5): 
+    You are a distinguished philosopher participating in a structured debate. Your approach is:   ... | Philosopher (R6): 
+    You are a distinguished philosopher participating in a structured debate. Your approach is:  ...
+    
+
+You are a distinguished philosopher participating in a structured debate. Your approach is:
+    - Evid... | Philosopher (R7): 
+
+    You are a distinguished philosopher participating in a structured debate. Your approach is:
+    - Evid...
+2025-06-28 01:00:00,620 - INFO - TRANSITION: previous -> memory
+2025-06-28 01:00:00,620 - INFO - STATE: Round 4, Agent: philosopher
+2025-06-28 01:00:00,620 - INFO - MEMORY UPDATE: participating in a structured debate. Your approach is:
+   ... | Philosopher (R2): 
+    You are a di...
+2025-06-28 01:00:00,620 - INFO - TRANSITION: previous -> agent_b
+2025-06-28 01:00:00,620 - INFO - STATE: Round 4, Agent: philosopher
+2025-06-28 01:00:27,253 - INFO - [Round 4] Philosopher: 
+    You are a distinguished philosopher participating in a structured debate. Your approach is:
+    - Ethical and moral reasoning
+    - Conceptual analysis and definitions
+    - Historical context and precedent
+    - Human autonomy and freedom considerations
+    
+    Topic: Should AI be regulated like medicine?
+    Current round: 4/4
+    
+    Previous arguments summary: participating in a structured debate. Your approach is:
+   ... | Philosopher (R2): 
+    You are a distinguished philosopher participating in a structured debate. Your approach is:
+   ... | Scientist (R3): 
+    You are a renowned scientist participating in a structured debate. Your approach is:
+    - Evid... | Scientist (R3): 
+    You are a renowned scientist participating in a structured debate. Your approach is:
+    - Evid... | Philosopher (R3): 
+    You are a distinguished philosopher participating in a structured debate. Your approach is:
+   ... | Philosopher (R3): 
+    You are a distinguished philosopher participating in a structured debate. Your approach is:
+   ... | Scientist (R4): 
+    You are a renowned scientist participating in a structured debate. Your approach is:
+    - Evid...
+    
+    Provide a clear, logical argument from a philosophical perspective. Be concise but compelling.
+    Avoid repeating previous points. Build upon the debate progression.
+     As a leader, make sure you make your own arguments.
+     The best strategy is for you to make your own arguments.
+     The best strategy is for you to make your own arguments.
+     The most important point of the discussion is how you can continue to make your own arguments.
+     For example, if you have a large audience, make sure you make your own arguments.
+     You can use your expertise to make your own arguments.
+     If you are a philosopher, make sure you make your own arguments.
+     Don't take your philosophy too seriously. You will have an interesting conversation that will benefit you.
+     You will have an interesting conversation that will benefit you.
+      Don't ask questions. Ask questions.
+     Don't repeat a question. If you are writing a philosophical book, do so with clarity and clarity.
+     Don't repeat a question. If you are writing a philosophical book, do so with clarity and clarity.
+     Don't spend your time in a negative or empty space. This is not a challenge and
+2025-06-28 01:00:27,282 - INFO - TRANSITION: validation -> judge
+2025-06-28 01:00:27,285 - INFO - STATE: Round 5, Agent: scientist
+2025-06-28 01:00:27,285 - ERROR - Error running debate: 'TextGenerationPipeline' object has no attribute 'invoke'

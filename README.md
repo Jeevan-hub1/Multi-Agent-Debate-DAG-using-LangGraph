@@ -1,20 +1,49 @@
-# Multi-Agent Debate DAG using LangGraph
+Sure! Here's your **updated full `README.md`** tailored to the new architecture using Hugging Face's `transformers` pipeline (specifically GPT-2), with all mentions of OpenAI removed and relevant sections rewritten accordingly:
 
-A sophisticated debate simulation system where two AI agents (Scientist and Philosopher) engage in structured arguments with memory management, turn control, and automated judging.
+---
+
+# 🧠 Multi-Agent Debate DAG using LangGraph
+
+A sophisticated debate simulation system where two AI agents (Scientist and Philosopher) engage in structured arguments with memory management, turn control, and automated judging — all powered by a local Hugging Face model using LangGraph's DAG-based execution.
+
+---
+
+## 📚 Table of Contents
+
+* [🎯 Overview](#-overview)
+* [🏗️ Architecture](#-architecture)
+* [🚀 Installation & Setup](#-installation--setup)
+* [💻 Usage](#-usage)
+* [📁 Output Files](#-output-files)
+* [🔧 Technical Implementation](#-technical-implementation)
+* [🎨 DAG Visualization](#-dag-visualization)
+* [🔍 Key Features](#-key-features)
+* [🐛 Troubleshooting](#-troubleshooting)
+* [📊 Performance Considerations](#-performance-considerations)
+* [🔮 Future Enhancements](#-future-enhancements)
+* [📝 License](#-license)
+* [🤝 Contributing](#-contributing)
+
+---
 
 ## 🎯 Overview
 
 This system implements a complete debate workflow using LangGraph's DAG architecture, featuring:
-- **Two specialized AI agents** with distinct personas and reasoning styles
-- **Memory management** that maintains debate context and history
-- **Turn-based control** ensuring proper alternation between agents
-- **Automated judging** with logical evaluation and winner declaration
-- **Comprehensive logging** of all state transitions and arguments
-- **CLI interface** for user interaction
+
+* **Two specialized AI agents** with distinct personas and reasoning styles
+* **Memory management** that maintains debate context and history
+* **Turn-based control** ensuring proper alternation between agents
+* **Automated judging** with logical evaluation and winner declaration
+* **Comprehensive logging** of all state transitions and arguments
+* **Local LLM via Hugging Face** (`gpt2`, no API key needed)
+* **CLI interface** for user interaction
+
+---
 
 ## 🏗️ Architecture
 
 ### DAG Structure
+
 ```
 UserInput → AgentA (Scientist) → Memory → AgentB (Philosopher) → Memory → ...
                 ↓                                    ↓
@@ -34,64 +63,77 @@ UserInput → AgentA (Scientist) → Memory → AgentB (Philosopher) → Memory 
 5. **ValidationNode**: Ensures debate completion (8 rounds) and coherence
 6. **JudgeNode**: Evaluates arguments and declares winner with reasoning
 
+---
+
 ## 🚀 Installation & Setup
 
 ### Prerequisites
-- Python 3.8+
-- OpenAI API key
+
+* Python 3.8+
+* Internet connection (first time only, for downloading model)
 
 ### Installation Steps
 
-1. **Clone/Download the project files**
+1. **Clone or Download the Project**
+
    ```bash
-   # Save the main code as debate_system.py
-   # Save requirements as requirements.txt
+   git clone https://github.com/your-username/multi-agent-debate-dag.git
+   cd multi-agent-debate-dag
    ```
 
-2. **Install dependencies**
+2. **Install Dependencies**
+
    ```bash
    pip install -r requirements.txt
    ```
 
-3. **Set up OpenAI API key**
-   ```bash
-   export OPENAI_API_KEY="your-api-key-here"
+   Example `requirements.txt`:
+
    ```
-   
-   Or create a `.env` file:
-   ```
-   OPENAI_API_KEY=your-api-key-here
+   transformers
+   torch
+   langgraph
+   rich
    ```
 
-4. **Run the system**
+3. **Run the System**
+
    ```bash
    python debate_system.py
    ```
 
+   No API key required!
+
+---
+
 ## 💻 Usage
 
-### Basic Usage
+### Basic CLI Usage
+
 ```bash
 python debate_system.py
 ```
 
-The system will prompt you for a debate topic:
+The system will prompt:
+
 ```
-Enter topic for debate: Should AI be regulated like medicine?
+Enter topic for debate:
+```
+
+Example input:
+
+```
+Should AI be regulated like medicine?
 ```
 
 ### Expected Output Format
+
 ```
 Starting debate between Scientist and Philosopher...
 Topic: Should AI be regulated like medicine?
 
 [Round 1] Scientist: AI regulation is crucial for public safety, similar to pharmaceutical oversight...
-
 [Round 1] Philosopher: While safety is important, excessive regulation could stifle innovation...
-
-[Round 2] Scientist: The potential for AI systems to cause widespread harm necessitates...
-
-[Round 2] Philosopher: Historical precedent shows that overregulation often delays...
 
 ...
 
@@ -102,26 +144,63 @@ The debate centered on balancing AI safety with innovation freedom...
 Reason: Presented more grounded, risk-based arguments with concrete examples...
 ```
 
+---
+
 ## 📁 Output Files
 
-The system generates several output files:
+The system generates:
 
-1. **`debate_log.txt`**: Complete log of all operations, state transitions, and arguments
-2. **`debate_results.json`**: Structured JSON output with final debate state
-3. **Console output**: Real-time debate progress and results
+1. **`debate_log.txt`**: Full log of debate steps, state transitions, and arguments
+2. **`debate_results.json`**: Structured output of final debate state
+3. **Console Output**: Real-time feedback during debate execution
 
 ### Sample Log Entry
+
 ```
-2024-01-15 10:30:45 - INFO - TRANSITION: user_input -> agent_a
-2024-01-15 10:30:45 - INFO - STATE: Round 1, Agent: scientist
-2024-01-15 10:30:50 - INFO - [Round 1] Scientist: AI systems require regulatory oversight...
-2024-01-15 10:30:50 - INFO - MEMORY UPDATE: Scientist (R1): AI systems require regulatory...
+2025-06-27 13:44:10 - INFO - TRANSITION: user_input -> agent_a
+2025-06-27 13:44:10 - INFO - STATE: Round 1, Agent: scientist
+2025-06-27 13:44:13 - INFO - [Round 1] Scientist: AI systems require regulatory oversight...
 ```
+
+---
 
 ## 🔧 Technical Implementation
 
+### Language Model
+
+This system uses Hugging Face's **GPT-2** model for local text generation:
+
+```python
+from transformers import pipeline
+self.llm = pipeline("text-generation", model="gpt2")
+```
+
+You can modify parameters like:
+
+```python
+self.llm(prompt, max_new_tokens=100, temperature=0.7)
+```
+
+### Agent Personas
+
+**Scientist**:
+
+* Empirical, evidence-based reasoning
+* Focuses on risk analysis and real-world data
+
+**Philosopher**:
+
+* Ethical, conceptual, and historical reasoning
+* Focuses on morality, human values, and autonomy
+
+### Memory System
+
+* **Structured summaries** per round per agent
+* **Truncation logic** to manage token length
+* **Contextual prompts** passed to agents
+
 ### State Management
-The system uses a comprehensive `DebateState` dataclass:
+
 ```python
 @dataclass
 class DebateState:
@@ -135,42 +214,12 @@ class DebateState:
     judge_reasoning: Optional[str] = None
 ```
 
-### Agent Personas
-
-**Scientist Agent**:
-- Evidence-based reasoning
-- Empirical data focus
-- Risk assessment methodology
-- Practical implications analysis
-
-**Philosopher Agent**:
-- Ethical and moral reasoning
-- Conceptual analysis
-- Historical context consideration
-- Human autonomy perspectives
-
-### Memory System
-- **Structured summaries**: Maintains context without overwhelming agents
-- **Truncation logic**: Prevents memory overflow while preserving recent context
-- **Agent-specific filtering**: Each agent receives relevant historical context
-
-### Validation Logic
-- **Turn enforcement**: Ensures proper alternation between agents
-- **Round counting**: Tracks progress toward 8-round completion
-- **Argument uniqueness**: Prevents repetition through memory context
-- **Coherence checking**: Maintains logical flow throughout debate
+---
 
 ## 🎨 DAG Visualization
 
-The system supports DAG visualization through two methods:
+### Static Mermaid Diagram
 
-### Method 1: Programmatic Generation
-```python
-# Add to your code for visualization
-debate_system.graph.get_graph().draw_mermaid()
-```
-
-### Method 2: Static Diagram
 ```mermaid
 graph TD
     A[UserInput] --> B[AgentA - Scientist]
@@ -184,84 +233,93 @@ graph TD
     H --> I[END]
 ```
 
+### Optional Programmatic View
+
+Add this to your script to visualize:
+
+```python
+debate_system.graph.get_graph().draw_mermaid()
+```
+
+---
+
 ## 🔍 Key Features
 
-### 1. Robust Turn Management
-- Conditional routing ensures proper agent alternation
-- State validation prevents out-of-turn speaking
-- Round tracking maintains debate structure
+* ✅ **Turn-based debate flow** with DAG logic
+* ✅ **Agent personas** simulate distinct reasoning strategies
+* ✅ **Memory summaries** for context and consistency
+* ✅ **Automated judge** using heuristics for final verdict
+* ✅ **Local inference** with `transformers`, no API key needed
+* ✅ **Structured outputs** and full logging
 
-### 2. Intelligent Memory System
-- Contextual summaries for each agent
-- Memory truncation prevents token overflow
-- Historical context preservation
-
-### 3. Comprehensive Logging
-- All state transitions logged
-- Individual arguments tracked
-- Memory updates recorded
-- Final judgment preserved
-
-### 4. Automated Judging
-- Multi-criteria evaluation system
-- Logical coherence assessment
-- Evidence strength analysis
-- Clear winner declaration with reasoning
+---
 
 ## 🐛 Troubleshooting
 
 ### Common Issues
 
-1. **API Key Error**
-   ```
-   Error: OpenAI API key not found
-   ```
-   **Solution**: Set the `OPENAI_API_KEY` environment variable
+#### 1. Model not found
 
-2. **Import Errors**
-   ```
-   ModuleNotFoundError: No module named 'langgraph'
-   ```
-   **Solution**: Install requirements with `pip install -r requirements.txt`
-
-3. **Empty Arguments**
-   **Solution**: Check API key validity and network connection
-
-### Debug Mode
-Enable detailed logging by modifying the logger level:
-```python
-logging.basicConfig(level=logging.DEBUG)
+```
+OSError: Couldn't connect to 'https://huggingface.co' to download model...
 ```
 
-## 📊 Performance Considerations
+✅ **Solution**: Ensure internet is available for the first run.
 
-- **Token Management**: Memory system prevents token overflow
-- **API Efficiency**: Structured prompts minimize API calls
-- **Error Handling**: Comprehensive exception management
-- **State Persistence**: JSON output preserves results
+#### 2. CUDA Warnings
 
-## 🔮 Future Enhancements
+```
+UserWarning: CUDA not available
+```
 
-Potential improvements for the system:
-- **Multiple debate formats** (Oxford, Parliamentary, etc.)
-- **Variable round counts** (configurable debate length)
-- **Additional agent personas** (Lawyer, Economist, etc.)
-- **Real-time web interface** using FastAPI/Streamlit
-- **Debate quality metrics** and scoring system
-- **Multi-topic batch processing**
+✅ **Solution**: Safe to ignore unless using GPU.
 
-## 📝 License
+#### 3. Repetitive or Nonsensical Output
 
-This project is provided as-is for educational and demonstration purposes.
+✅ **Solution**: Tune generation settings:
 
-## 🤝 Contributing
-
-To contribute to this project:
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes with tests
-4. Submit a pull request
+```python
+max_new_tokens=100, temperature=0.7, top_p=0.9
+```
 
 ---
 
-**Note**: This system requires a valid OpenAI API key and internet connection for the LLM calls. The debate quality depends on the underlying language model's capabilities.
+## 📊 Performance Considerations
+
+* 🧠 **Memory truncation** avoids overflow
+* ⚙️ **Efficient local inference** for small debates
+* ✅ **No API usage** = fully offline after model download
+* 🧪 **Output logs and JSONs** support post-analysis
+
+---
+
+## 🔮 Future Enhancements
+
+* 🗣️ Support more agents (e.g., Economist, Lawyer)
+* 🏛️ Add more debate formats (Oxford, Townhall, etc.)
+* 🖥️ Web UI via Streamlit or FastAPI
+* 🧠 Upgrade to `gpt-j`, `llama`, or `mistral` for deeper debates
+* 📈 Add quality scoring and metrics for debates
+* 🔄 Multi-topic batch processing
+
+---
+
+## 📝 License
+
+This project is provided **as-is** for educational and demonstration purposes.
+Feel free to fork and extend!
+
+---
+
+## 🤝 Contributing
+
+To contribute:
+
+1. Fork this repository
+2. Create a new branch: `git checkout -b feature/your-feature`
+3. Make your changes + tests
+4. Submit a pull request!
+
+---
+
+Let me know if you'd like this as a downloadable `README.md` file or need help deploying this as a web app.

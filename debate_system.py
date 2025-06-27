@@ -13,7 +13,6 @@ from dataclasses import dataclass, asdict
 from enum import Enum
 from langgraph.graph import StateGraph, END
 from langchain_core.messages import SystemMessage
-from langchain_openai import ChatOpenAI
 from typing import TypedDict
 from transformers import pipeline 
 
@@ -152,15 +151,10 @@ class DebateAgents:
 
 
 class DebateDAG:
-    """Main DAG implementation for the debate system"""
-    
     def __init__(self, api_key: str = None):
         self.logger = DebateLogger()
-        self.llm = ChatOpenAI(
-            model="gpt-4o-mini",
-            temperature=0.7,
-            api_key=api_key or os.getenv("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")
-        )
+        # Use a free Hugging Face conversational model
+        self.llm = pipeline("text-generation", model="gpt2")  # Very basic, but public and free
         self.graph = self._build_graph()
     
     def _build_graph(self) -> StateGraph:
@@ -254,8 +248,8 @@ class DebateDAG:
             memory=debate_state.memory_summary or "No previous arguments"
         )
         
-        response = self.llm.invoke([SystemMessage(content=prompt)])
-        argument_text = response.content.strip()
+        response = self.llm(prompt, max_new_tokens=256)
+        argument_text = response[0]['generated_text']
         
         # Create argument record
         argument = DebateArgument(
@@ -291,8 +285,8 @@ class DebateDAG:
             memory=debate_state.memory_summary or "No previous arguments"
         )
         
-        response = self.llm.invoke([SystemMessage(content=prompt)])
-        argument_text = response.content.strip()
+        response = self.llm(prompt, max_new_tokens=256)
+        argument_text = response[0]['generated_text']
         
         # Create argument record
         argument = DebateArgument(
