@@ -1,0 +1,32 @@
+2025-06-28 00:18:02,427 - ERROR - Error running debate: 'DebateDAG' object has no attribute 'graph'
+2025-06-28 00:19:06,534 - ERROR - Error running debate: 'DebateDAG' object has no attribute 'graph'
+2025-06-28 00:20:33,503 - INFO - TRANSITION: START -> user_input
+2025-06-28 00:20:33,503 - INFO - STATE: (not initialized)
+2025-06-28 00:20:47,191 - INFO - TRANSITION: previous -> agent_a
+2025-06-28 00:20:47,191 - INFO - STATE: Round 1, Agent: scientist
+2025-06-28 00:20:49,668 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-06-28 00:20:49,670 - INFO - Retrying request to /chat/completions in 0.483715 seconds
+2025-06-28 00:20:51,003 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-06-28 00:20:51,007 - INFO - Retrying request to /chat/completions in 0.874577 seconds
+2025-06-28 00:20:52,690 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-06-28 00:20:52,720 - ERROR - Error running debate: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+2025-06-28 00:23:45,067 - INFO - TRANSITION: START -> user_input
+2025-06-28 00:23:45,067 - INFO - STATE: (not initialized)
+2025-06-28 00:23:48,685 - INFO - TRANSITION: previous -> agent_a
+2025-06-28 00:23:48,685 - INFO - STATE: Round 1, Agent: scientist
+2025-06-28 00:23:50,250 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-06-28 00:23:50,252 - INFO - Retrying request to /chat/completions in 0.436810 seconds
+2025-06-28 00:23:51,820 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-06-28 00:23:51,825 - INFO - Retrying request to /chat/completions in 0.830836 seconds
+2025-06-28 00:23:53,413 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-06-28 00:23:53,437 - ERROR - Error running debate: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+2025-06-28 00:25:41,596 - INFO - TRANSITION: START -> user_input
+2025-06-28 00:25:41,597 - INFO - STATE: (not initialized)
+2025-06-28 00:25:50,760 - INFO - TRANSITION: previous -> agent_a
+2025-06-28 00:25:50,760 - INFO - STATE: Round 1, Agent: scientist
+2025-06-28 00:25:51,475 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-06-28 00:25:51,475 - INFO - Retrying request to /chat/completions in 0.481416 seconds
+2025-06-28 00:25:52,830 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-06-28 00:25:52,835 - INFO - Retrying request to /chat/completions in 0.816020 seconds
+2025-06-28 00:25:54,033 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-06-28 00:25:54,042 - ERROR - Error running debate: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
